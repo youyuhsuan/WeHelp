@@ -1,6 +1,11 @@
 @use "../abstracts/variables" as *;
 @use "../layout/breakpoints" as *;
 
+%margin-bottom {
+  width: 100%;
+  margin-bottom: 6rem;
+}
+
 body {
   background-color: $backgound-color;
   min-height: 100vh;
@@ -10,8 +15,8 @@ header {
   background-color: $tertiary-color;
   color: $backgound-color;
   text-align: center;
-  padding: 0.1rem;
-  margin-bottom: 4rem;
+  padding: 0.01rem;
+  @extend %margin-bottom;
   box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px inset,
     rgba(0, 0, 0, 0.3) 0px 18px 36px -18px inset;
 }
@@ -23,7 +28,7 @@ main {
 }
 
 section {
-  margin-bottom: 6rem;
+  @extend %margin-bottom;
 }
 
 .container {
@@ -31,22 +36,16 @@ section {
   flex-direction: row;
   align-items: center;
   gap: 4rem;
+  @extend %margin-bottom;
   @include media-breakpoint-down(lg) {
     flex-direction: column;
+    justify-content: center;
   }
 }
 
 .info-avater {
   flex: auto;
   position: relative;
-  &::after {
-    content: "HELLO";
-    position: absolute;
-    left: 2rem;
-    top: 2rem;
-    color: $light-color;
-    font-size: 4rem;
-  }
   img {
     width: 100%;
     object-fit: cover;

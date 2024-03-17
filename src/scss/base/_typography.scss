@@ -5,41 +5,37 @@
 body {
   font-family: "Noto Sans TC", sans-serif;
 }
-
 header {
-  font-size: 1.6rem;
   letter-spacing: 1rem;
   font-weight: $font-weight-thin;
+  @include media-breakpoint-up(ms) {
+    letter-spacing: 0.2rem;
+  }
 }
-
 a {
   text-decoration: none;
   color: $tertiary-color;
 }
-
 h1,
 h2 {
   font-weight: $font-weight-regular;
   letter-spacing: 0.2rem;
 }
-
 h2 {
   color: $tertiary-color;
 }
-
 span {
   background-color: $tertiary-color;
   color: $light-color;
   border-radius: $radius-sm;
   font-weight: $font-weight-bold;
 }
-
-p {
+p,
+code {
   color: $tertiary-color;
   line-height: 1.5;
   font-weight: $font-weight-light;
 }
-
 ul {
   line-height: 2;
 }
@@ -56,7 +52,6 @@ li {
   text-transform: uppercase;
   font-size: 1rem;
 }
-
 .sc_title-zh {
   color: darken($secondary-color, 20%);
   font-size: 1.6rem;
@@ -68,11 +63,14 @@ li {
     align-items: flex-start;
   }
   .name-en {
-    font-size: 5rem;
+    font-size: 6rem;
     letter-spacing: 0.15rem;
     text-decoration-style: dotted;
-    @include media-breakpoint-down(lg) {
-      font-size: 4rem;
+    @include media-breakpoint-up(lg) {
+      font-size: 5rem;
+    }
+    @include media-breakpoint-up(ms) {
+      font-size: 2rem;
     }
   }
   .name-zh {
@@ -84,8 +82,11 @@ li {
     writing-mode: vertical-lr;
     font-size: 2rem;
     font-weight: $font-weight-light;
-    @include media-breakpoint-down(lg) {
+    @include media-breakpoint-up(lg) {
       margin: 5rem 2rem;
+    }
+    @include media-breakpoint-up(ms) {
+      margin: 2rem 2rem;
     }
   }
 
@@ -95,7 +96,33 @@ li {
   }
 }
 
+.info-avater {
+  &::after {
+    content: "HELLO";
+    position: absolute;
+    color: $light-color;
+    left: 2rem;
+    top: 2rem;
+    font-size: 4rem;
+    @include media-breakpoint-down(sm) {
+      left: 1rem;
+      top: 1rem;
+      font-size: 2rem;
+    }
+  }
+}
 mark {
   background-color: $tertiary-color;
   color: $backgound-color;
+}
+
+.card {
+  &:hover {
+    * {
+      color: $light-color;
+    }
+    span {
+      background-color: $secondary-color;
+    }
+  }
 }
