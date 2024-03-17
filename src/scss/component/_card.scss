@@ -1,0 +1,33 @@
+@use "../abstracts/variables" as *;
+@use "../layout/breakpoints" as *;
+@use "sass:math" as *;
+.card-container {
+  display: grid;
+  gap: 3rem 3rem;
+  grid-template-columns: repeat(auto-fill, minmax(30%, 1fr));
+  width: 100%;
+  @include media-breakpoint-down(lg) {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+  }
+}
+
+.card {
+  background-color: lighten($backgound-color, 30%);
+  border-radius: $radius-lg;
+  padding: 2rem;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px,
+    rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
+  .card-title {
+    display: flex;
+    align-items: center;
+    h2 {
+      flex: auto;
+    }
+    span {
+      padding: 0.5rem;
+      letter-spacing: 0.15rem;
+    }
+  }
+}

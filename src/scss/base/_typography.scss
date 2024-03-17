@@ -1,0 +1,101 @@
+@use "../abstracts/variables" as *;
+@use "../layout/breakpoints" as *;
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@100..900&family=Noto+Serif+HK:wght@900&display=swap");
+
+body {
+  font-family: "Noto Sans TC", sans-serif;
+}
+
+header {
+  font-size: 1.6rem;
+  letter-spacing: 1rem;
+  font-weight: $font-weight-thin;
+}
+
+a {
+  text-decoration: none;
+  color: $tertiary-color;
+}
+
+h1,
+h2 {
+  font-weight: $font-weight-regular;
+  letter-spacing: 0.2rem;
+}
+
+h2 {
+  color: $tertiary-color;
+}
+
+span {
+  background-color: $tertiary-color;
+  color: $light-color;
+  border-radius: $radius-sm;
+  font-weight: $font-weight-bold;
+}
+
+p {
+  color: $tertiary-color;
+  line-height: 1.5;
+  font-weight: $font-weight-light;
+}
+
+ul {
+  line-height: 2;
+}
+li {
+  line-height: 2;
+}
+ul,
+li {
+  color: $tertiary-color;
+}
+
+.sc_title-en {
+  color: $secondary-color;
+  text-transform: uppercase;
+  font-size: 1rem;
+}
+
+.sc_title-zh {
+  color: darken($secondary-color, 20%);
+  font-size: 1.6rem;
+}
+
+.info-content {
+  .name {
+    display: flex;
+    align-items: flex-start;
+  }
+  .name-en {
+    font-size: 5rem;
+    letter-spacing: 0.15rem;
+    text-decoration-style: dotted;
+    @include media-breakpoint-down(lg) {
+      font-size: 4rem;
+    }
+  }
+  .name-zh {
+    background-color: $tertiary-color;
+    color: $backgound-color;
+    padding: 2rem 1rem;
+    margin: 6rem 2rem;
+    letter-spacing: 0.6rem;
+    writing-mode: vertical-lr;
+    font-size: 2rem;
+    font-weight: $font-weight-light;
+    @include media-breakpoint-down(lg) {
+      margin: 5rem 2rem;
+    }
+  }
+
+  ul {
+    list-style-type: none;
+    color: $tertiary-color;
+  }
+}
+
+mark {
+  background-color: $tertiary-color;
+  color: $backgound-color;
+}

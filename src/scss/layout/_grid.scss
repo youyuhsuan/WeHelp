@@ -1,0 +1,55 @@
+@use "../abstracts/variables" as *;
+@use "../layout/breakpoints" as *;
+
+body {
+  background-color: $backgound-color;
+  min-height: 100vh;
+}
+
+header {
+  background-color: $tertiary-color;
+  color: $backgound-color;
+  text-align: center;
+  padding: 0.1rem;
+  margin-bottom: 4rem;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px inset,
+    rgba(0, 0, 0, 0.3) 0px 18px 36px -18px inset;
+}
+
+main {
+  max-width: 1440px;
+  width: calc(100% - 6rem);
+  margin: 0 auto;
+}
+
+section {
+  margin-bottom: 6rem;
+}
+
+.container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 4rem;
+  @include media-breakpoint-down(lg) {
+    flex-direction: column;
+  }
+}
+
+.info-avater {
+  flex: auto;
+  position: relative;
+  &::after {
+    content: "HELLO";
+    position: absolute;
+    left: 2rem;
+    top: 2rem;
+    color: $light-color;
+    font-size: 4rem;
+  }
+  img {
+    width: 100%;
+    object-fit: cover;
+    aspect-ratio: 1 / 1;
+  }
+}
